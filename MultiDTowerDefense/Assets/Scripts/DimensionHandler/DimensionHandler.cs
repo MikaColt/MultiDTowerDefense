@@ -12,7 +12,8 @@ public class DimensionHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        CurrentDimension = new Dimension(4);
+        CurrentOrientation = new Vector3Int(0,1,2);
     }
 
     // Update is called once per frame

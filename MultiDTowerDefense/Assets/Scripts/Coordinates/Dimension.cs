@@ -17,6 +17,12 @@ public class Dimension
         CurrentOrientation = coord.CurrentOrientation;
         PopulateDimensionCoordinates();
     }
+    public Dimension(int depth)
+    {
+        Coordinate = new MultiCoord(depth);
+        CurrentOrientation = Coordinate.CurrentOrientation;
+        PopulateDimensionCoordinates();
+    }
     private MultiCoord Coordinate = new MultiCoord();
 
     private List<(int,float)> DimensionCoordinates = new List<(int, float)> ();
@@ -26,7 +32,7 @@ public class Dimension
         for (int i = 0; i < Coordinate.Length; i++)
         {
             if (IsOrientedDimension(i)) { continue; }
-            DimensionCoordinates.Add(Coordinate[i]);
+            DimensionCoordinates.Add((i,Coordinate[i]));
         }
     }
     private bool IsOrientedDimension(int dimension) 

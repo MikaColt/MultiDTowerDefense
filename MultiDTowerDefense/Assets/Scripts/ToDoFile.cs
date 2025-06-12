@@ -6,9 +6,8 @@ public class ToDoFile
 {
 //
 /*
-
-    Modify MultiCoord-
-        -
+Finish Fixing Errors in Dimension / coord classes
+    
  
  * */
 //

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MultiCoord 
 {
+ 
+
+
+
     private Vector3 CurrentCoord 
     {
         get 
