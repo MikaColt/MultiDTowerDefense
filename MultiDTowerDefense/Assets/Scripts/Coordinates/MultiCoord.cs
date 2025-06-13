@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MultiCoord 
 {
- 
+ public float this[int index] 
+    {
+        get 
+        {
+            return Coordinates[index];
+        }
+    }
 
 
 
@@ -21,7 +27,7 @@ public class MultiCoord
             Coordinates[CurrentOrientation[2]] = value.z;
         }
     }
-    public Vector3Int CurrentOrientation = new Vector3Int(0,0,0);
+    public Vector3Int CurrentOrientation = new Vector3Int(0,1,2);
 
 
     public int Length {  get { return Coordinates.Count; } set { } }

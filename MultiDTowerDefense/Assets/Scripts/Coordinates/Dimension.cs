@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Dimension 
 {
-    private Vector3Int CurrentOrientation = new Vector3Int(0, 0, 0);
+    private Vector3Int CurrentOrientation = new Vector3Int(0, 1, 2);
+
 
     public Dimension() 
     {
@@ -37,19 +38,12 @@ public class Dimension
     }
     private bool IsOrientedDimension(int dimension) 
     {
-
-        switch (dimension)
-        {
-            case CurrentOrientation.x:
-                return true;
-            case CurrentOrientation.y:
-                return true;
-            case CurrentOrientation.z:
-                return true;
-            default:
-                return false;
-        }
-
-
+        if(dimension == CurrentOrientation.x)
+        {return true; }
+        if (dimension == CurrentOrientation.y)
+        { return true; }
+        if (dimension == CurrentOrientation.z)
+        { return true; }
+        return false;
     }
 }

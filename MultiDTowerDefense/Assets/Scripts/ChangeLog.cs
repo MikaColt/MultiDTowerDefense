@@ -16,6 +16,10 @@ public class ChangeLog
             Modified MultiCoord Class
             Modified Dimension Class
             Modified Dimension Handler Class
+
+                -8p:20m
+             Modified MultiCoord - indexable with index in for coord values
+            Modified Dimension class.IsOrientedDimension function - fixedxc syntax error0
     */
     //
 }
