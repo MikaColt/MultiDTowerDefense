@@ -26,7 +26,8 @@ public class ChangeLog
             Modified Movement Controller class. Now properly moves parent object when destination is changed
                     4Pm
             Created Units folder. created UnitObject and Health classes
-     
+                    5pm
+            Modified Health class; added functionality. Added Attack/Defense/DamageType classes
      
      */
     //
