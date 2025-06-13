@@ -20,6 +20,10 @@ public class ChangeLog
                 -8p:20m
              Modified MultiCoord - indexable with index in for coord values
             Modified Dimension class.IsOrientedDimension function - fixedxc syntax error0
-    */
+    
+     
+     6/13/2025  -   2pm
+            Modified Movement Controller class. Now properly moves parent object when destination is changed
+     */
     //
 }
