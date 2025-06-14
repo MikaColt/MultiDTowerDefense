@@ -24,7 +24,7 @@ public class MovementController : MonoBehaviour
         }
     }
     private float Speed;
-    private Vector3 Destination;
+    public Vector3 Destination;
     private Vector3 Lerp() 
     {
         return new Vector3();
