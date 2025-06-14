@@ -43,16 +43,31 @@ public class UnitObject : MonoBehaviour
     }
     public bool RecieveAttack(Attack attack) 
     {
+        RandomFloat rand = new RandomFloat();
+        
+
         DamageType type = attack.Damage_Type;
         (float, float) defenses = Defenses[type];
-        float damage = attack.Damage;
+        
+        float accuracy = attack.Accuracy;
         float avoidance = defenses.Item1;
+        float totalAccuracy = accuracy - avoidance;
+
+        float randResult = rand[(0f,100f)];
+        bool hit = (randResult >= (100f- totalAccuracy));
+
+
+
+        float damage = attack.Damage;
         float resistance = defenses.Item2;
+
         float penetration = attack.Penetration;
         float total = damage + penetration - resistance;
-        bool hit = true;
-
-        if (total > 0)
+        if (total < 0)
+        {
+            total = 0;
+        }
+        if (total > 0 && hit)
         {
             LoseHP(total);
         }

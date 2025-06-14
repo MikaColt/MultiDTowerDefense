@@ -28,7 +28,8 @@ public class ChangeLog
             Created Units folder. created UnitObject and Health classes
                     5pm
             Modified Health class; added functionality. Added Attack/Defense/DamageType classes
-     
+     6/14/2025   -12:20pm
+                Created Item folder (class not created yet). Created RandomFloat class. Modified UnitObject class to determine random success of attacks
      */
     //
 }
