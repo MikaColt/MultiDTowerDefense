@@ -173,20 +173,46 @@ public class InputActionHandler : MonoBehaviour
 
 
             SetCooldown_Keyboard(action);
+
         switch (action)
         {
             case "Tab":
 //                Debug.Log(action);
-                Action_CycleMenuForward();
+  //              Action_CycleMenuForward();
                 break;
             case "Return":
                 //                Debug.Log(action);
-                Action_ActivateSelectedButton();
+//                Action_ActivateSelectedButton();
                 break;
             case "Backspace":
                 //                Debug.Log(action);
-                Action_BackOutOfMenu();
+  //              Action_BackOutOfMenu();
                 break;
+
+                case "Space":
+                Action_Jump();
+                break;
+
+            case "a":
+                Action_MoveLeft();
+                break;
+            case "w":
+                Action_MoveForward();
+                break;
+            case "d":
+                Action_MoveRight();
+                break;
+            case "s":
+                Action_MoveBackward();
+                break;
+
+            case "q":
+                Action_RotateLeft();
+                break;
+            case "e":
+                Action_RotateRight();
+                break;
+
             default:
                 break;
         }
@@ -207,10 +233,10 @@ public class InputActionHandler : MonoBehaviour
         switch (mouseDetection.Item2)
         {
             case "Down":
-                Action_MouseButtons(mouseDetection.Item1);
+  //              Action_MouseButtons(mouseDetection.Item1);
                 break;
             case "Up":
-                Action_MouseButtons_Release(mouseDetection.Item1);
+ //               Action_MouseButtons_Release(mouseDetection.Item1);
                 break;
             default:
                 break;
@@ -249,45 +275,45 @@ public class InputActionHandler : MonoBehaviour
         {
             case GamePadControllerEnum.Down:
 //                Debug.Log(action);
-                Action_CycleMenuForward();
+ //               Action_CycleMenuForward();
                 break;
             case GamePadControllerEnum.Up:
  //                               Debug.Log(action);
-                Action_CycleMenuBackwards();
+ //               Action_CycleMenuBackwards();
                 break;
             case GamePadControllerEnum.A:
                 //                               Debug.Log(action);
-                Action_ActivateSelectedButton();
+ //               Action_ActivateSelectedButton();
                 break;
             case GamePadControllerEnum.B:
                 //                               Debug.Log(action);
-                Action_BackOutOfMenu();
+ //               Action_BackOutOfMenu();
                 break;
             case GamePadControllerEnum.RB:
                 //                               Debug.Log(action);
-                Action_RightBumperCycle();
+  //              Action_RightBumperCycle();
                 break;
             case GamePadControllerEnum.LB:
                 //                               Debug.Log(action);
-                Action_LeftBumperCycle();
+    //            Action_LeftBumperCycle();
                 break;
             case GamePadControllerEnum.RJ:
                 //                               Debug.Log(action);
-                Action_RightJoystickClick();
+      //          Action_RightJoystickClick();
                 break;
             case GamePadControllerEnum.LJ:
                 //                               Debug.Log(action);
-                Action_LeftJoystickClick();
+        //        Action_LeftJoystickClick();
                 break;
 
 
             case GamePadControllerEnum.Y:
                 //                               Debug.Log(action);
-                Action_CycleDownSeclectionDropdown();
+   //             Action_CycleDownSeclectionDropdown();
                 break;
             case GamePadControllerEnum.X:
                 //                               Debug.Log(action);
-                Action_CycleUpSelectionDropdown();
+      //          Action_CycleUpSelectionDropdown();
                 break;
             default:
                 break;
@@ -316,6 +342,7 @@ public class InputActionHandler : MonoBehaviour
         //       Debug.Log(actions.Count);
         MouseActions.Add(actions);
     }
+
     public int CooldownResetDuration = 15;
     public float MouseCooldownModifier = 1.5f;
     //(currentcooldown remaining, cooldown amount)
@@ -385,6 +412,7 @@ public class InputActionHandler : MonoBehaviour
     }
 
     //-------------------------------------------------------------------
+    /*
     public void Action_CycleMenuForward() 
     {
         BattleMenuNavigation.Instance.IncrementSelection();
@@ -519,8 +547,37 @@ public class InputActionHandler : MonoBehaviour
     {
 
     }
+    */
 
 
+    public void Action_MoveLeft() 
+    {
+        CameraController.instance.MoveLeft();
+    }
+    public void Action_MoveRight()
+    {
+        CameraController.instance.MoveRight();
+    }
+    public void Action_MoveForward()
+    {
+        CameraController.instance.MoveForward();
+    }
+    public void Action_MoveBackward()
+    {
+        CameraController.instance.MoveBackward();
+    }
+    public void Action_RotateLeft()
+    {
+        CameraController.instance.RotateLeft();
+    }
+    public void Action_RotateRight()
+    {
+    CameraController.instance.RotateRight();
+    }
+    public void Action_Jump()
+    {
+        CameraController.instance.Jump();
+    }
 
     //--------------------------------------
 

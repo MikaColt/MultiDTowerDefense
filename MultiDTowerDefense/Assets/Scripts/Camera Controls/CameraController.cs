@@ -4,6 +4,28 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public CameraController() 
+    {
+    instance = this;
+    }
+    public static CameraController instance;
+
+    public GameObject Camera;
+
+    public MovementController Movement 
+    {
+        get 
+        {
+            return Camera.GetComponent<MovementController>();
+        }
+    }
+    public Vector3 Position 
+    {
+        get {return Movement.Destination; }
+        set { Movement.Destination = value; }  
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +36,43 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+
+
+
+    public float RotationMultiplier = 10f;
+    public float MovementMultiplier = 10f;
+
+
+
+    public void MoveLeft()
+    {
+        Position = Vector3.left* MovementMultiplier + Position;
+    }
+    public void MoveRight()
+    {
+        Position = Vector3.right* MovementMultiplier + Position;
+    }
+    public void MoveForward()
+    {
+        Position = Vector3.forward* MovementMultiplier + Position;
+    }
+    public void MoveBackward()
+    {
+        Position = Vector3.back* MovementMultiplier + Position;
+    }
+    public void RotateLeft()
+    {
+        Movement.Rotate(new Vector3(0,-1f,0)* RotationMultiplier);
+    }
+    public void RotateRight()
+    {
+        Movement.Rotate(new Vector3(0, 1f, 0)* RotationMultiplier);
+    }
+    public void Jump()
+    {
+        Position = Vector3.up + Position;
     }
 }

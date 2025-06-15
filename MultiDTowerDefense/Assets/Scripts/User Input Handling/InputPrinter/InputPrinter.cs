@@ -43,22 +43,18 @@ public class InputPrinter : MonoBehaviour
         _GetKeyboardActions();
 
         //       _JoystickUpdate();
-        //       _PrintActions();
+    //           _PrintActions();
 
         if (Actions.Count > 0)
         {
+ //           Debug.Log("ACtrions count > 0");
+//            Debug.Log($"InputActionHandler.Instance != null = {InputActionHandler.Instance != null}");
             if (InputActionHandler.Instance != null)
             {
                 InputActionHandler.Instance.PushKeyboardActions(Actions);
+ //               Debug.Log("InputPrinter | Update } if actions count > 0 && if InpuitActionHandler.Instance != null");
             }
-            if (MainMenuInputActionHandler.Instance != null)
-            {
-                MainMenuInputActionHandler.Instance.PushKeyboardActions(Actions);
-            }
-            if (ArenaInputActionHandler.Instance != null)
-            {
-                ArenaInputActionHandler.Instance.PushKeyboardActions(Actions);
-            }
+
 
         }
         if (Actions_Mouse.Count > 0)
@@ -68,14 +64,7 @@ public class InputPrinter : MonoBehaviour
             {
                 InputActionHandler.Instance.PushMouseActions(Actions_Mouse);
             }
-            if (MainMenuInputActionHandler.Instance != null)
-            {
-                MainMenuInputActionHandler.Instance.PushMouseActions(Actions_Mouse);
-            }
-            if (ArenaInputActionHandler.Instance != null)
-            {
-                ArenaInputActionHandler.Instance.PushMouseActions(Actions_Mouse);
-            }
+
 
         }
 

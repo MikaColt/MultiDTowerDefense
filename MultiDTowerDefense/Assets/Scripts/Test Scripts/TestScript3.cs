@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript1 : MonoBehaviour
+public class TestScript3 : MonoBehaviour
 {
+    public GameObject Target;
     public GameObject CubeSource;
-    public MovementController Movement 
+    public MovementController Movement
     {
         get
         {
@@ -16,7 +17,7 @@ public class TestScript1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,14 +30,9 @@ public class TestScript1 : MonoBehaviour
         {
 
 
-            RandomFloat rand = new RandomFloat();
-            float randx = rand[(-1, 1)];
- //           float randy = rand[(-1, 1)];
-            float randz = rand[(-1, 1)];
+            Movement.LookAt(Target.transform.position);
 
-            Movement.Destination = (new Vector3(randx, 0f, randz) + Movement.Destination);
-
-            _Timer = 0;
+                       _Timer = 0;
         }
     }
 }

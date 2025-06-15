@@ -1,10 +1,12 @@
 
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using System;
 using System.Collections.Generic;
 public class GamePadPrinter : MonoBehaviour
 {
+
+    /*
     public static GamePadPrinter Instance { get; private set; }
 
     private void Awake()
@@ -45,15 +47,15 @@ public class GamePadPrinter : MonoBehaviour
     private void Start()
     {
         SelectedController = -1;
-        /*
+        //
         // Find all attached peripherals
-        var devices = InputSystem.devices;
+       // var devices = InputSystem.devices;
 
-        foreach (var device in devices)
-        {
-            Debug.Log($"Device Name: {device.displayName}, Device Type: {device.device.description.deviceClass}");
-        }
-        */
+      //  foreach (var device in devices)
+     //   {
+     //       Debug.Log($"Device Name: {device.displayName}, Device Type: {device.device.description.deviceClass}");
+     //   }
+        //
     }
 
 
@@ -99,12 +101,13 @@ public class GamePadPrinter : MonoBehaviour
                         List<GamePadControllerEnum> actions = GetGamepadInputs(gamepad);
                         LeftJoystick = gamepad.leftStick.ReadValue();
                         RightJoystick = gamepad.rightStick.ReadValue();
-                        /*
-                        for (int i = 0; i < actions.Count; i++)
-                        {
-                            Debug.Log(actions[i]);
-                        }
-                        */
+                        //
+                        //for (int i = 0; i < actions.Count; i++)
+                       // {
+                      //      Debug.Log(actions[i]);
+                      //
+    }
+                        //
                         Actions.Add((iCounter, LeftJoystick, RightJoystick, actions));
                     }
 
@@ -135,12 +138,12 @@ public class GamePadPrinter : MonoBehaviour
 
                 Actions = new List<(int, Vector2, Vector2, List<GamePadControllerEnum>)>();
             }
-            /*
-            else if (device is Keyboard keyboard)
-            {
+            //
+            //else if (device is Keyboard keyboard)
+           // {
              //   PrintKeyboardInputs(keyboard);
-            }
-            */
+           // }
+            //
             // Add more input devices here if needed
             iCounter += 1;
         }
@@ -182,6 +185,8 @@ public class GamePadPrinter : MonoBehaviour
         Debug.Log($"Gamepad {gamepad.displayName} - Start: {gamepad.startButton.isPressed}");
         Debug.Log($"Gamepad {gamepad.displayName} - Select: {gamepad.selectButton.isPressed}");
     }
+    
+    
     private List<GamePadControllerEnum> GetGamepadInputs(Gamepad gamepad)
     {
         List<GamePadControllerEnum> actions = new List<GamePadControllerEnum>();
@@ -260,31 +265,31 @@ public class GamePadPrinter : MonoBehaviour
             }
   //      }
 
-        /*
-        else if (SelectedController_IsNintendoStyle)
-        {
-            if (gamepad.buttonSouth.isPressed)
-            {
-                actions.Add(GamePadControllerEnum.B);
-            }
-            if (gamepad.buttonEast.isPressed)
-            {
-                actions.Add(GamePadControllerEnum.A);
-            }
-            if (gamepad.buttonWest.isPressed)
-            {
-                actions.Add(GamePadControllerEnum.Y);
-            }
-            if (gamepad.buttonNorth.isPressed)
-            {
-                actions.Add(GamePadControllerEnum.X);
-            }
-        }
-        else 
-        {
+        //
+       // else if (SelectedController_IsNintendoStyle)
+       // {
+       //     if (gamepad.buttonSouth.isPressed)
+       //     {
+        //        actions.Add(GamePadControllerEnum.B);
+         //   }
+          //  if (gamepad.buttonEast.isPressed)
+           // {
+        //        actions.Add(GamePadControllerEnum.A);
+         //   }
+          //  if (gamepad.buttonWest.isPressed)
+           // {
+          //      actions.Add(GamePadControllerEnum.Y);
+         //   }
+          //  if (gamepad.buttonNorth.isPressed)
+          //  {
+          //      actions.Add(GamePadControllerEnum.X);
+         //   }
+      //  }
+     //   else 
+     //   {
         
-        }
-        */
+     //   }
+        //
  //       Debug.Log($"Gamepad {gamepad.displayName} - Button A: {gamepad.buttonSouth.isPressed}");
  //       Debug.Log($"Gamepad {gamepad.displayName} - Button B: {gamepad.buttonEast.isPressed}");
  //       Debug.Log($"Gamepad {gamepad.displayName} - Button X: {gamepad.buttonWest.isPressed}");
@@ -347,5 +352,6 @@ public class GamePadPrinter : MonoBehaviour
             }
         }
     }
+    */
 }
 

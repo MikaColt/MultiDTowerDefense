@@ -33,8 +33,15 @@ public class ChangeLog
      
      6/15/2025      10:33am
                 Created User Input Handling and Camera Controller Classes
-               
-     
+                    11:15pm
+                Copied user input handling files from alternative project. edited to remove incompatobilities
+                Modified Movement Controller to control object rotation
+                    12:20pm
+                User keyboard input has rudimentary control over camera movement and rotation
+                    1pm
+                Added waypoints to movement controller
+                    1:40pm
+                Movement controller now makes units face direction they are moving towards when new destination is implemented.
      */
     //
 }
