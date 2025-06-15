@@ -30,6 +30,11 @@ public class ChangeLog
             Modified Health class; added functionality. Added Attack/Defense/DamageType classes
      6/14/2025   -12:20pm
                 Created Item folder (class not created yet). Created RandomFloat class. Modified UnitObject class to determine random success of attacks
+     
+     6/15/2025      10:33am
+                Created User Input Handling and Camera Controller Classes
+               
+     
      */
     //
 }
