@@ -46,6 +46,8 @@ public class ChangeLog
                     10:30pm
             Created UnitSpawner class     
             Capped Waypoints to 25 max.
+                    12:30pm
+            Testscript 4 periodically despawns units
             
             
      */

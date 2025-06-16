@@ -54,6 +54,9 @@ public class UnitSpawner : MonoBehaviour
     }
     public void DeSpawnUnit(int index) 
     {
+        if (SpawnedObjects.Count <= index)
+        { return; }
+
         DisableSpawnedObject(index);
         SpawnObjects.Add(SpawnedObjects[index]);
         SpawnedObjects.Remove(SpawnedObjects[index]);
