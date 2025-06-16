@@ -19,7 +19,7 @@ public class ChangeLog
 
                 -8p:20m
              Modified MultiCoord - indexable with index in for coord values
-            Modified Dimension class.IsOrientedDimension function - fixedxc syntax error0
+            Modified Dimension class.IsOrientedDimension function - fixedxc syntax error
     
      
      6/13/2025  -   2pm
@@ -42,6 +42,12 @@ public class ChangeLog
                 Added waypoints to movement controller
                     1:40pm
                 Movement controller now makes units face direction they are moving towards when new destination is implemented.
+    6/16/2025
+                    10:30pm
+            Created UnitSpawner class     
+            Capped Waypoints to 25 max.
+            
+            
      */
     //
 }

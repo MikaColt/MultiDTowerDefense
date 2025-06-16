@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class UnitObject : MonoBehaviour
 {
-    private Health HP = new Health();
-    private bool IsAlive 
+    public int SpawnerUnitIndex = 0;
+
+
+
+    public Health HP = new Health();
+    public bool IsAlive 
     {
         get 
         {

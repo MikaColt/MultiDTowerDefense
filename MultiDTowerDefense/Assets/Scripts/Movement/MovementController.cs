@@ -36,7 +36,7 @@ public class MovementController : MonoBehaviour
     }
 
 
-    private float Speed = 0.005f;
+    private float Speed = 0.004f;
     public Vector3 Destination = new Vector3();
     private Vector3 Lerp(float amount) 
     {
@@ -47,6 +47,14 @@ public class MovementController : MonoBehaviour
     {
         Destination = destination;
     }
+    public void TeleportTo(Vector3 position)
+    {
+        Position = position;
+        Destination = position;
+        ClearWaypoints();
+    }
+
+
     public void Rotate(Vector3 rotation)
     {
         Parent.transform.Rotate(rotation);
@@ -56,13 +64,31 @@ public class MovementController : MonoBehaviour
 
         Parent.transform.LookAt (target);
     }
+
+
+
+    public Vector3 FirstWaypoint 
+    {
+    get { return Waypoints[0]; }
+    }
+    public Vector3 LastWaypoint
+    {
+        get { return Waypoints[Waypoints.Count-1]; }
+    }
     public void AddWaypoint(Vector3 destination) 
     {
-    Waypoints.Add(destination);
+
+        if (Waypoints.Count < MaxWaypoints)
+        {
+            Waypoints.Add(destination);
+        }
     }
-
+    public void ClearWaypoints() 
+    {
+    Waypoints = new List<Vector3>();
+    }
     public List<Vector3> Waypoints = new List<Vector3>();
-
+    public int MaxWaypoints = 25;
 
 
     // Start is called before the first frame update
