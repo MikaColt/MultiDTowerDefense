@@ -47,10 +47,21 @@ public class UnitSpawner : MonoBehaviour
     }
     public void EnableSpawnedObject()
     {
-        int index = SpawnedObjects.Count - 1;
-        SpawnedObjects[index].SetActive(true);
-        SpawnedObjects[index].GetComponent<UnitObject>().SpawnerUnitIndex = index;
-        SpawnedObjects[index].GetComponent<MovementController>().TeleportTo(SpawnLocation);
+        try
+        {
+            int index = SpawnedObjects.Count - 1;
+            SpawnedObjects[index].SetActive(true);
+            SpawnedObjects[index].GetComponent<UnitObject>().SpawnerUnitIndex = index;
+            SpawnedObjects[index].GetComponent<MovementController>().TeleportTo(SpawnLocation);
+
+            SpawnedObjects[index].GetComponent<MovementController>().SetWaypoints(Waypoints);
+        }
+        catch 
+        {
+
+          
+        }
+
     }
     public void DeSpawnUnit(int index) 
     {

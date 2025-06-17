@@ -4,7 +4,26 @@ using UnityEngine;
 
 public class UnitObject : MonoBehaviour
 {
+    public string Name;
+
     public int SpawnerUnitIndex = 0;
+
+    public float DetectionRange = 30f;
+
+
+    public InventoryClass Inventory = new InventoryClass();
+    public void AddToInventory(ItemClass item)
+
+    {
+        Inventory.AddToInventory(item);
+    }
+    public void AddAndEquipWeapon(WeaponClass weapon)
+
+    {
+        Inventory.AddToInventory(weapon);
+        EquippedWeapon = weapon;
+    }
+    public WeaponClass EquippedWeapon;
 
 
 
@@ -82,7 +101,7 @@ public class UnitObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.GetComponent<UnitDetector>().DetectionRange = DetectionRange; 
     }
 
     // Update is called once per frame

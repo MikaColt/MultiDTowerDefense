@@ -213,6 +213,27 @@ public class InputActionHandler : MonoBehaviour
                 Action_RotateRight();
                 break;
 
+
+            case "A":
+                Action_MoveLeft();
+                break;
+            case "W":
+                Action_MoveForward();
+                break;
+            case "D":
+                Action_MoveRight();
+                break;
+            case "S":
+                Action_MoveBackward();
+                break;
+
+            case "Q":
+                Action_RotateLeft();
+                break;
+            case "E":
+                Action_RotateRight();
+                break;
+
             default:
                 break;
         }

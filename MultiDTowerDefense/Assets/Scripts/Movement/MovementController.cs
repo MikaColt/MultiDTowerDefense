@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public bool IsMoving 
+    {
+        get 
+        {
+        return !HasArrived && Waypoints.Count ==0;
+        }
+    }
 
     private GameObject Parent 
     {
@@ -66,7 +73,10 @@ public class MovementController : MonoBehaviour
     }
 
 
-
+    public void SetWaypoints (List<Vector3> points)
+    {
+    Waypoints = points; 
+    }
     public Vector3 FirstWaypoint 
     {
     get { return Waypoints[0]; }
@@ -102,12 +112,12 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(Position, Destination);
-        if ( distance > AccuracyThreshold)
+        if (HasArrived == false)
         {
 
             Position = Lerp(Speed);
-            distance = Vector3.Distance(Position, Destination);
-            if (distance <= AccuracyThreshold) 
+
+            if (HasArrived) 
             {
                 if (Waypoints.Count > 0)
                 {
@@ -136,4 +146,13 @@ public class MovementController : MonoBehaviour
         }
         */
 }
+    public bool HasArrived 
+    {
+        get 
+        {
+            float distance = Vector3.Distance(Position, Destination);
+            return distance <= AccuracyThreshold;
+        }
+    }
+
 }

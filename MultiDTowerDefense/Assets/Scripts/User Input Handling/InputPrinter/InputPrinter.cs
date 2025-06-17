@@ -43,7 +43,7 @@ public class InputPrinter : MonoBehaviour
         _GetKeyboardActions();
 
         //       _JoystickUpdate();
-    //           _PrintActions();
+   //            _PrintActions();
 
         if (Actions.Count > 0)
         {

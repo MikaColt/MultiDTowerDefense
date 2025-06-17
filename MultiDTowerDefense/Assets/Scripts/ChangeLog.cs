@@ -49,6 +49,16 @@ public class ChangeLog
                     12:30pm
             Testscript 4 periodically despawns units
             
+    6/17/2025          
+                    10:30am
+            Created weapons / items. created inventory class
+            Testscript5: adds test machine gun to base tower inventory
+            MovementController: added IsMoving bool
+                    11:20am
+            Fixed spawner to give waypoints to spawned units
+            Created UnitDetection script
+                    12:10pm
+            UnitDetection script detects and tracks closest unit objects
             
      */
     //

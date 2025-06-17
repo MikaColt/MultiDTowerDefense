@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingClass : UnitObject
+public class MainBase : BuildingClass
 {
 
 }
