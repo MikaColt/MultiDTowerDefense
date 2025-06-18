@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public bool LookAtDestination = true;
     public bool IsMoving 
     {
         get 
@@ -11,6 +12,11 @@ public class MovementController : MonoBehaviour
         return !HasArrived && Waypoints.Count ==0;
         }
     }
+    public bool PauseMovement = false;
+    public bool CanMove = true;
+
+    public bool IsFollowing = false;
+    public UnitObject FollowTarget;
 
     private GameObject Parent 
     {
@@ -19,7 +25,7 @@ public class MovementController : MonoBehaviour
             return gameObject;
         }
     }
-    private Vector3 Position 
+    public Vector3 Position 
     {
         get 
         {
@@ -43,11 +49,16 @@ public class MovementController : MonoBehaviour
     }
 
 
-    private float Speed = 0.004f;
+    public float Speed = 1f;
     public Vector3 Destination = new Vector3();
     private Vector3 Lerp(float amount) 
     {
         Vector3 lerp = Vector3.Lerp(Position, Destination, amount);
+        return lerp;
+    }
+    private Vector3 LerpFollow(float amount)
+    {
+        Vector3 lerp = Vector3.Lerp(Position, FollowTarget.transform.position, amount);
         return lerp;
     }
     public void MoveTo(Vector3 destination) 
@@ -99,6 +110,17 @@ public class MovementController : MonoBehaviour
     }
     public List<Vector3> Waypoints = new List<Vector3>();
     public int MaxWaypoints = 25;
+    public bool HasWaypoints { get { return Waypoints.Count > 0; } }
+
+    public Vector3 LastMovementPosition 
+    {
+        get 
+        {
+            if (HasWaypoints) { return LastWaypoint; }
+            else if (HasArrived) { return Position; }
+            else {return Destination; }
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -111,18 +133,31 @@ public class MovementController : MonoBehaviour
     float AccuracyThreshold = 1f;
     void Update()
     {
+        
+        if (PauseMovement) {return;}
+
+        if (IsFollowing)
+        {
+            LerpFollow(Speed * Time.deltaTime);
+            return;
+        }
+
+
         float distance = Vector3.Distance(Position, Destination);
         if (HasArrived == false)
         {
 
-            Position = Lerp(Speed);
+            Position = Lerp(Speed*Time.deltaTime);
 
             if (HasArrived) 
             {
                 if (Waypoints.Count > 0)
                 {
                     Destination = Waypoints[0];
-                    LookAt(Destination);
+                    if (LookAtDestination)
+                    {
+                        LookAt(Destination);
+                    }
                     Waypoints.RemoveAt(0);
                 }
             }
@@ -132,19 +167,15 @@ public class MovementController : MonoBehaviour
             if (Waypoints.Count > 0)
             {
                 Destination = Waypoints[0];
-                LookAt(Destination);
+                if (LookAtDestination)
+                {
+                    LookAt(Destination);
+                }
                 Waypoints.RemoveAt(0);
             }
         }
         
-        /*
-        if (Rotation != DesiredRotation)
-        {
-            Debug.Log($"rotating {Rotation} => {DesiredRotation}");
-            Rotation = DesiredRotation;
-            Debug.Log($"rotated {Rotation}");
-        }
-        */
+
 }
     public bool HasArrived 
     {

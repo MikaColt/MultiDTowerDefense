@@ -172,9 +172,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Uhara
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &72667722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -265,12 +277,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &128195245
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,9 +794,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Bob
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &609828069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +815,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -872,12 +899,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &670574012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,9 +1192,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Timmy
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &905365692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -1255,12 +1297,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1404,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 0
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -1584,7 +1635,7 @@ MonoBehaviour:
   - {fileID: 1771358044}
   - {fileID: 1568095285}
   SpawnedObjects: []
-  SpawnTimer: 5
+  SpawnTimer: 3
   SpawnSummonDuration: 1
 --- !u!4 &1424440998
 Transform:
@@ -1610,7 +1661,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424440996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a2e8476eb72c9e47976961c49573903, type: 3}
   m_Name: 
@@ -1738,9 +1789,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Spock
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &1568095288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,6 +1810,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -1831,12 +1894,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &1589619752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,9 +1952,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Shirley
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &1589619755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1973,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -1979,12 +2057,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &1710066428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,6 +2178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -2112,9 +2199,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Frank
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &1710066435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2127,12 +2220,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &1748017971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,9 +2352,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Kirk
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &1771358047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,6 +2373,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -2349,12 +2457,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &1809176858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,9 +2548,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c219b0f38d33d428d7aa5819656b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 1
   Name: Elayne
+  Action: 3
   SpawnerUnitIndex: 0
+  Spawner: {fileID: 0}
   DetectionRange: 30
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &1881566422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2452,6 +2569,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 1
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
   Destination: {x: 0, y: 0, z: 0}
   Waypoints: []
   MaxWaypoints: 25
@@ -2530,12 +2653,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
 --- !u!1 &1882116783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,6 +2883,7 @@ GameObject:
   - component: {fileID: 2126745738}
   - component: {fileID: 2126745739}
   - component: {fileID: 2126745740}
+  - component: {fileID: 2126745741}
   m_Layer: 0
   m_Name: MainBase
   m_TagString: Unit
@@ -2855,9 +2982,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c153c36b755dc54bac29737065e4353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: 0
   Name: Player Base
+  Action: 3
   SpawnerUnitIndex: 0
-  DetectionRange: 30
+  Spawner: {fileID: 0}
+  DetectionRange: 50
+  TargetedUnit: {fileID: 0}
+  ProcessingSpeed: 1
+  ProcessingTimer: 0
 --- !u!114 &2126745739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2865,7 +2998,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126745733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afb886862d72dc48b77be14bbcc1b01, type: 3}
   m_Name: 
@@ -2885,9 +3018,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36569c2fc1ff88944b45de0a510fe893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FactionID: -1
   DetectionRange: 20
   updateTimer: 0
   updateSpeed: 100
   HitColliders: []
+  UnitsWithinRange: []
   ClosestUnit: {fileID: 0}
-  TargetedUnit: {fileID: 0}
+  EnemiesWithinRange: []
+  ClosestEnemy: {fileID: 0}
+--- !u!114 &2126745741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126745733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4614304b61e40ec4085cb1be1eb0d40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtDestination: 1
+  PauseMovement: 0
+  CanMove: 0
+  IsFollowing: 0
+  FollowTarget: {fileID: 0}
+  Speed: 1
+  Destination: {x: 0, y: 0, z: 0}
+  Waypoints: []
+  MaxWaypoints: 25

@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class Defense 
 {
+    public Defense() { Initialization(); }
     //returns (Resistance,avoidance)
     public (float,float) this[DamageType index]
     {
         get
         {
+
+
             return (Resistances[index],Avoidances[index]);
         }
     }
@@ -22,7 +25,7 @@ public class Defense
     {
         foreach (DamageType type in Enum.GetValues(typeof(DamageType)))
         {
-            Resistances[type] = 1f;
+            Resistances[type] = 0f;
             Avoidances[type] = 0f;
         }
     }

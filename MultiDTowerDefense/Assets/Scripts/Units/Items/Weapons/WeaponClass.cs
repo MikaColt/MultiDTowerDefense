@@ -20,6 +20,8 @@ public class WeaponClass : ItemClass
     public float BaseAttackSpeed;
     public float BaseAccuracy;
 
+    public float BonusDamage;
+
     public string AttackName;
 
     public DamageType Damage_Type;

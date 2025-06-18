@@ -52,8 +52,11 @@ public class UnitSpawner : MonoBehaviour
             int index = SpawnedObjects.Count - 1;
             SpawnedObjects[index].SetActive(true);
             SpawnedObjects[index].GetComponent<UnitObject>().SpawnerUnitIndex = index;
-            SpawnedObjects[index].GetComponent<MovementController>().TeleportTo(SpawnLocation);
+            SpawnedObjects[index].GetComponent<UnitObject>().Spawner = this;
 
+//            Debug.Log($"{index} | {SpawnedObjects.Count}");
+
+            SpawnedObjects[index].GetComponent<MovementController>().TeleportTo(SpawnLocation);
             SpawnedObjects[index].GetComponent<MovementController>().SetWaypoints(Waypoints);
         }
         catch 
@@ -71,6 +74,7 @@ public class UnitSpawner : MonoBehaviour
         DisableSpawnedObject(index);
         SpawnObjects.Add(SpawnedObjects[index]);
         SpawnedObjects.Remove(SpawnedObjects[index]);
+        ResetSpawnIndexes();
     }
     public void DisableSpawnedObject(int index) 
     {
@@ -98,6 +102,12 @@ public class UnitSpawner : MonoBehaviour
     for (int i = 0; i < SpawnObjects.Count; i++) { SpawnObjects[i].SetActive(false); }
     }
 
+    public void ResetSpawnIndexes() 
+    {
+    for(int i = 0;i < SpawnObjects.Count;i++) { SpawnObjects[i].GetComponent<UnitObject>().SpawnerUnitIndex = i; }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -110,18 +120,18 @@ public class UnitSpawner : MonoBehaviour
     private float updateSummonTimer = 0f;
     void Update()
     {
-        updateTimer += 1;
+        updateTimer += 1f* Time.deltaTime;
         if (Summoning)
         {
-            updateSummonTimer += 1;
+            updateSummonTimer += 1f*Time.deltaTime;
         }
-        if (updateTimer >= SpawnTimer*360f) 
+        if (updateTimer >= SpawnTimer) 
         {
         updateTimer = 0f;
             SpawnUnit();
         }
 
-        if (updateSummonTimer >= SpawnSummonDuration * 360f)
+        if (updateSummonTimer >= SpawnSummonDuration)
         { 
         updateSummonTimer =0f;
             CompleteSummoning();

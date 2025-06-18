@@ -21,8 +21,8 @@ public class CameraController : MonoBehaviour
     }
     public Vector3 Position 
     {
-        get {return Movement.Destination; }
-        set { Movement.Destination = value; }  
+        get {return Movement.LastMovementPosition; }
+        set { Movement.AddWaypoint(value); }  
     }
 
 

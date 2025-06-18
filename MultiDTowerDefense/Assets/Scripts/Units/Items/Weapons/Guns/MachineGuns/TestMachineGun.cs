@@ -11,12 +11,16 @@ public TestMachineGun() : base()
         BaseAttackSpeed = 5f;
         BasePenetration = 0.1f;
         BaseDamage = 10f;
-        Range = 30f;
+        BonusDamage = 10f;
+
+        Range = 20f;
         Damage_Type = DamageType.Ballistic;
         BaseAccuracy = 0.8f;
 
         ClipCapacity = 1000f;
         CurrentAmmo = 10000f;
+
+
     }
 }
 

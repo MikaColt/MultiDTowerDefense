@@ -59,7 +59,23 @@ public class ChangeLog
             Created UnitDetection script
                     12:10pm
             UnitDetection script detects and tracks closest unit objects
-            
+                    2:45pm
+            Added action mode enum for unit behaviour
+                    3pm
+            UnitObject now interfaces with UnitDetector to target closest unit
+    6/18/2025
+                    8:30am
+            Fixed some camera control errors.
+            Worked on Unit action logic
+            Fixed movement controller to not rotate camera accidently when moving
+                    9am
+            Fixed minor bugs in interactions between UnitObject class and Movement controller class
+                    10am
+            Attacks succesfully working. 
+            HP percent now calculated correctly
+                    10:30am
+            Fixed Spawner Unit ID bug
+            Fixed timing errors with unit spawner by adding delta time calculations
      */
     //
 }

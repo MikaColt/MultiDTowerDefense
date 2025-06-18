@@ -13,11 +13,11 @@ public class Health
         }
     }
     // keeps track of current HP
-    private float HP = 0f;
+    public float HP = 0f;
     //keeps track of max base HP
-    private float MaxHP = 100f;
+    public float MaxHP = 100f;
     //returns current HP percent of Max (0-1 for 0-100%)
-    private float HP_Percent 
+    public float HP_Percent 
     {
         get 
         {
@@ -25,7 +25,7 @@ public class Health
             {
                 return 0f;
             }
-            return MaxHP / HP;
+            return HP / MaxHP;
         }
         set 
         {
@@ -67,4 +67,9 @@ public class Health
         HP = MaxHP * percent;
     }
 
+    public void InitHP(float max) 
+    {
+    MaxHP = max;
+        SetHP_Max();
+    }
 }
