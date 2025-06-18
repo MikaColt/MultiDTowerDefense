@@ -208,6 +208,7 @@ public class UnitObject : MonoBehaviour
         if (TargetedUnit.IsAlive == true)
         {
             TargetedUnit.RecieveAttack(AttackStats);
+            AttackCooldownTimer = EquippedWeapon.WeaponSpeed;
         }
             if (TargetedUnit.IsAlive == false) 
         {
@@ -225,14 +226,19 @@ public class UnitObject : MonoBehaviour
     }
 
 
-    public float ProcessingSpeed = 1f;
+    public float ProcessingSpeed = 0.025f;
     // Update is called once per frame
 
+
+    public float AttackCooldownTimer = 0f;
     public float ProcessingTimer = 0f;
     public void Update()
     {
         ProcessingTimer += Time.deltaTime;
-
+        if (AttackCooldownTimer > 0)
+        {
+            AttackCooldownTimer -= Time.deltaTime;
+        }
         if (ProcessingTimer >= ProcessingSpeed)
         {
             switch (Action)
@@ -242,6 +248,14 @@ public class UnitObject : MonoBehaviour
                     ProcessMovement();
                         break;
                 case ActionMode.Attack:
+                    if (AttackCooldownTimer > 0)
+                    {
+                        ProcessingTimer = ProcessingSpeed - AttackCooldownTimer;
+                        return;
+                    }
+
+
+
                     ProcessAttack();
                     break;
                 case ActionMode.Stunned:

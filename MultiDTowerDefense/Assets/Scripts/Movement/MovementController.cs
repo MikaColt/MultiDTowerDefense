@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+
+
     public bool LookAtDestination = true;
     public bool IsMoving 
     {
@@ -100,7 +102,7 @@ public class MovementController : MonoBehaviour
         Parent.transform.LookAt (target);
     }
 
-
+ 
     public void SetWaypoints (List<Vector3> points)
     {
     Waypoints = points; 

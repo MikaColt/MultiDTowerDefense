@@ -79,7 +79,11 @@ public class ChangeLog
      
                     5:30pm
             Changed motion controller Lerp function
-     
+                    6:10pm
+            modified camera controls script to disable look at destination.
+            modified camera controls script to bypass waypoint functionality
+                    6:25pm
+            modified unit object script to add attack cooldown
      */
     //
 }

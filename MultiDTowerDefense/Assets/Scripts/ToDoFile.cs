@@ -11,7 +11,6 @@ public class ToDoFile
 
 
      Modify camera controls to accomadate direction for current camera rotation
-    Modify Camera controls to bypass waypoint movement with movement controller
 
 
 
@@ -19,7 +18,8 @@ public class ToDoFile
 
 
 
-    Modify attack functions to cooldown with attack speed
+
+
 
 
 
@@ -41,6 +41,13 @@ public class ToDoFile
      
      //possible completion 6/18/2025 5:25pm
       Modify movement controller to change LERP to a function that finds a point a certain distance away in the direction of movement
+
+    //possible completion 6/18/2025 6:10pm
+        Modify Camera controls to bypass waypoint movement with movement controller
+
+
+    //possible copletion 6/18/2025  6:20pm
+             Modify attack functions to cooldown with attack speed
    
      
      * */
