@@ -51,14 +51,31 @@ public class MovementController : MonoBehaviour
 
     public float Speed = 1f;
     public Vector3 Destination = new Vector3();
+
+
+    public Vector3 FindPointOnLineAtDistance(Vector3 origin, Vector3 endpoint, float distance) 
+    {
+        Vector3 pointing = endpoint - origin;
+        pointing.Normalize();
+        Vector3 result = new Vector3();
+        result = (origin + (pointing * distance));
+        return result;
+    }
+
+
     private Vector3 Lerp(float amount) 
     {
-        Vector3 lerp = Vector3.Lerp(Position, Destination, amount);
+        //Vector3 lerp = Vector3.Lerp(Position, Destination, amount);
+        Vector3 lerp = FindPointOnLineAtDistance(Position, Destination, amount);
         return lerp;
     }
+
     private Vector3 LerpFollow(float amount)
     {
-        Vector3 lerp = Vector3.Lerp(Position, FollowTarget.transform.position, amount);
+        //Vector3 lerp = Vector3.Lerp(Position, FollowTarget.transform.position, amount);
+
+        Vector3 lerp = FindPointOnLineAtDistance(Position, FollowTarget.transform.position, amount);
+
         return lerp;
     }
     public void MoveTo(Vector3 destination) 
@@ -185,5 +202,12 @@ public class MovementController : MonoBehaviour
             return distance <= AccuracyThreshold;
         }
     }
+
+
+    public float LerpCorrection = 0f;
+
+
+
+
 
 }

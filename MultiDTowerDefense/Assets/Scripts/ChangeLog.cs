@@ -76,6 +76,10 @@ public class ChangeLog
                     10:30am
             Fixed Spawner Unit ID bug
             Fixed timing errors with unit spawner by adding delta time calculations
+     
+                    5:30pm
+            Changed motion controller Lerp function
+     
      */
     //
 }

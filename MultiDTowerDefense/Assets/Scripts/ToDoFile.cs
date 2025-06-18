@@ -10,8 +10,7 @@ public class ToDoFile
         Modify Keyboard Input to better accomodate pressing and holding keys on keyboard
 
 
-     Modify movement controller to change LERP to a function that finds a point a certain distance away in the direction of movement
-    Modify camera controls to accomadate direction for current camera rotation
+     Modify camera controls to accomadate direction for current camera rotation
     Modify Camera controls to bypass waypoint movement with movement controller
 
 
@@ -39,6 +38,11 @@ public class ToDoFile
 
         //complete 6/18/2025 10:30am
         Fix Spawner Unit Index; some mistake in interaction between spawner and spawned units when setting index for spawning
+     
+     //possible completion 6/18/2025 5:25pm
+      Modify movement controller to change LERP to a function that finds a point a certain distance away in the direction of movement
+   
+     
      * */
     //
 }
