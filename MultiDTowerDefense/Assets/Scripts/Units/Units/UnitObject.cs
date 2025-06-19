@@ -208,7 +208,7 @@ public class UnitObject : MonoBehaviour
         if (TargetedUnit.IsAlive == true)
         {
             TargetedUnit.RecieveAttack(AttackStats);
-            AttackCooldownTimer = EquippedWeapon.WeaponSpeed;
+            AttackCooldownTimer = EquippedWeapon.BaseAttackSpeed;
         }
             if (TargetedUnit.IsAlive == false) 
         {
